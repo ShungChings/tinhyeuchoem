@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tình yêu của anh cho em mỗi ngày</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Pacifico', cursive;
+      background: url('/mnt/data/c098771b-a9de-45be-82b2-e777ce1c0fee.png') no-repeat center center fixed;
+      background-size: cover;
+      overflow-x: hidden;
+      color: #ffffffdd;
+    }
+
+    .stars, .glow {
+      display: none;
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      padding: 100px 20px;
+      max-width: 900px;
+      margin: auto;
+      backdrop-filter: blur(4px);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 3em;
+      margin-bottom: 40px;
+      color: #ffffff;
+      text-shadow: 0 0 12px #ff69b4, 0 0 24px #ff69b4;
+    }
+
+    section {
+      opacity: 0;
+      transform: translateY(60px) scale(0.95);
+      transition: all 1.5s ease;
+      background: rgba(0, 0, 0, 0.45);
+      border-radius: 20px;
+      padding: 30px;
+      margin: 60px 0;
+      box-shadow: 0 8px 32px rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    section img {
+      width: 100%;
+      border-radius: 16px;
+      margin-top: 20px;
+      box-shadow: 0 4px 16px rgba(255, 255, 255, 0.3);
+    }
+
+    p {
+      font-size: 1.5em;
+      line-height: 1.8em;
+      color: #ffe6fa;
+      text-shadow: 0 0 4px #ffccf9;
+    }
+
+    audio {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 5;
+      box-shadow: 0 0 10px #fff3;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <h1>Tình yêu của anh cho em mỗi ngày 💖</h1>
+
+    <section>
+      <p>Ngày mình gặp nhau, có lẽ bầu trời đã sắp đặt. Em đến như ánh sao đầu tiên trong màn đêm yên bình của anh.</p>
+      <img src="/mnt/data/e0e0e812-ccce-40ca-8f42-c63c6907aa15.jpg" alt="Ảnh kỷ niệm 1" />
+    </section>
+
+    <section>
+      <p>Mỗi khoảnh khắc bên em, từ ánh mắt cho đến nụ cười, đều khiến tim anh rung động như lần đầu.</p>
+      <img src="/mnt/data/7b05d33e-56da-4acb-81d4-0cfc0f009c80.jpg" alt="Ảnh kỷ niệm 2" />
+    </section>
+
+    <section>
+      <p>Em luôn dịu dàng và rạng rỡ như ánh trăng giữa đêm thâu. Anh thấy may mắn vì được nắm tay em.</p>
+      <img src="/mnt/data/7660b1eb-8102-466a-90fc-314a2014b57f.jpg" alt="Ảnh kỷ niệm 3" />
+    </section>
+
+    <section>
+      <p>Chỉ cần là em, thì đi đâu cũng là thiên đường. Mỗi ngày trôi qua, anh lại càng yêu em nhiều hơn nữa.</p>
+      <img src="/mnt/data/dd878762-9af9-4863-aa1c-1fd5fe008384.jpg" alt="Ảnh kỷ niệm 4" />
+    </section>
+
+    <section>
+      <p>Dù mai sau thế nào, anh vẫn sẽ viết tiếp câu chuyện tình yêu này, bằng trái tim và cả bầu trời sao phía trên cao.</p>
+      <img src="/mnt/data/96cfabc0-a6ef-460b-9c11-eaa5a7cfb7a0.jpg" alt="Ảnh kỷ niệm 5" />
+    </section>
+  </div>
+
+  <audio controls autoplay loop>
+    <source src="https://cdn.pixabay.com/download/audio/2023/03/20/audio_2cda4561e4.mp3?filename=memories-of-spring-142469.mp3" type="audio/mpeg">
+    Trình duyệt của bạn không hỗ trợ âm thanh.
+  </audio>
+
+  <script>
+    const sections = document.querySelectorAll("section");
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.3 });
+
+    sections.forEach(section => observer.observe(section));
+  </script>
+</body>
+</html>
